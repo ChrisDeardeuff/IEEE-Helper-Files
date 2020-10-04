@@ -9,6 +9,10 @@ public final class Util {
         System.out.println(s);
     }
 
+
+    public static void readInputAndInsertIntoArray(){
+
+    }
     //================================================//
     //====================Searches====================//
     //================================================//
