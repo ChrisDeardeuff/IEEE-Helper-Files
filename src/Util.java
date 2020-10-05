@@ -24,13 +24,12 @@ public final class Util {
     public static int binarySearch(int[] intArray, int value, int left, int right){
 
         int index = -1;
-        int middle = intArray.length / 2;
-        int last = right;
-        int first = left;
 
         mergeSort(intArray, 0, intArray.length - 1);
 
-        if(right >= 1){
+        if(right >= left){
+            int middle = left + (right - 1) / 2;
+
             if(intArray[middle] == value){
                 index = middle;
                 return index;
@@ -44,7 +43,7 @@ public final class Util {
         //Implement Binary Search for integer here. Update index with the correct index if found.
         //If not fount return index as -1;
 
-        return index;
+        return - 1;
     }
 
     /**
@@ -81,7 +80,7 @@ public final class Util {
 
     public static void mergeSort(int[] intArr, int left, int right){
 
-        if(right > 1){
+        if(left < right){
             int middle = (left + right) / 2;
 
             mergeSort(intArr, left, middle);
@@ -94,7 +93,7 @@ public final class Util {
     private static void merge(int[] intArr, int left, int middle, int right){
 
         int size1 = middle - left + 1;
-        int size2 = middle - left + 1;
+        int size2 = right - middle;
 
         int[] leftArray = new int[size1];
         int[] rightArray = new int[size2];
@@ -102,7 +101,7 @@ public final class Util {
         for(int i = 0; i < size1; i++){
             leftArray[i] = intArr[left + i];
         }
-        for(int i = 0; i < size1; i++){
+        for(int i = 0; i < size2; i++){
             rightArray[i] = intArr[middle + 1 + i];
         }
         int index1 = 0;
@@ -121,13 +120,12 @@ public final class Util {
             }
             index3++;
         }
-        while (index1 < size2) {
+        while (index1 < size1) {
             intArr[index3] = leftArray[index1];
             index1++;
             index3++;
         }
 
-        /* Copy remaining elements of R[] if any */
         while (index2 < size2) {
             intArr[index3] = rightArray[index2];
             index2++;
