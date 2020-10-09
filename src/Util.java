@@ -7,9 +7,9 @@ public final class Util {
      * @param s the object passed to be printed
      */
     public static void print(Object s){
+
         System.out.println(s);
     }
-
 
     //================================================//
     //====================Searches====================//
@@ -21,29 +21,36 @@ public final class Util {
      * @param value the value to be searched for.
      * @return index, the index of the value if located in array. If not then return -1
      */
-    public static int binarySearch(int[] intArray, int value, int left, int right){
+    public static int binarySearch(int[] intArray, int value){
 
         int index = -1;
+        int left = 0;
+        int right = intArray.length;
 
         mergeSort(intArray, 0, intArray.length - 1);
 
-        if(right >= left){
-            int middle = left + (right - 1) / 2;
+        while(true) {
 
-            if(intArray[middle] == value){
-                index = middle;
-                return index;
-            }
-            if(intArray[middle] > value){
-                return binarySearch(intArray, value, left , middle - 1);
-            }
+            if (right >= left) {
+                int middle = left + (right - 1) / 2;
 
-            return binarySearch(intArray, value, middle + 1 , right);
+                if (intArray[middle] == value) {
+                    index = middle;
+                    return index;
+                }
+                if (intArray[middle] > value) {
+                    right = middle - 1;
+                    continue;
+                }
+
+                left = middle +1;
+                continue;
+            }
+            return -1;
         }
         //Implement Binary Search for integer here. Update index with the correct index if found.
         //If not fount return index as -1;
 
-        return - 1;
     }
 
     /**
@@ -54,10 +61,30 @@ public final class Util {
      */
     public static int binarySearch(String[] sArray, String value){
         int index = -1;
+        int left = 0;
+        int right = sArray.length;
         //Implement Binary Search for String here. Update index with the correct index if found.
-        //If not fount return index as -1;
 
-        return index;
+        while(true) {
+
+            if (right >= left) {
+                int middle = left + (right - 1) / 2;
+
+                if (sArray[middle].equals(value)) {
+                    index = middle;
+                    return index;
+                }
+                if (sArray[middle].compareTo(value) > 0) {
+                    right = middle - 1;
+                    continue;
+                }
+
+                left = middle +1;
+                continue;
+            }
+            return -1;
+        }
+        //If not found return index as -1;
     }
 
     /**
@@ -88,8 +115,8 @@ public final class Util {
 
             merge(intArr, left, middle, right);
         }
-
     }
+
     private static void merge(int[] intArr, int left, int middle, int right){
 
         int size1 = middle - left + 1;
