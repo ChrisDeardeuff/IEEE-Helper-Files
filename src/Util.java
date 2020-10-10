@@ -62,15 +62,13 @@ public final class Util {
      * @return index, the index of the value if located in array. If not then return -1
      */
     public static int binarySearch(String[] sArray, String value){
-        int index = -1;
+        int index;
         int left = 0;
         int right = sArray.length - 1;
         //Implement Binary Search for String here. Update index with the correct index if found.
 
         while(left <= right) {
-
-
-                int middle = left + right / 2;
+                int middle = (left + right) / 2;
 
                 if (sArray[middle].equals(value)) {
                     index = middle;

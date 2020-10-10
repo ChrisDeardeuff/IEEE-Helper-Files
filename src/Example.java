@@ -6,12 +6,15 @@ public class Example {
         Util.print("Hello World");
 
         int[] array = {2, 3, 7, 10, 5, 9};
-        String[] sArray = {"Cat","Dog","Monkey","Ardvark"};
+        String[] sArray = {"Cat","Dog","Monkey","Ardvark","Turtle"};
         double[] dArray = {2.3,3.14,0.0,9.2,10.1, -10.1};
 
+        //print Array
         Util.printArray(array);
+        //Sort array
         Util.mergeSort(array , 0,array.length - 1);
         Util.printArray(array);
+        //Search for element and print index
         Util.print(Util.binarySearch(array,5));
 
 
