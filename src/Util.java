@@ -3,7 +3,7 @@ import java.lang.reflect.Array;
 public final class Util {
 
     /**
-     * print call println and allows the user to not have to type System.out everytime to print
+     * print calls println and allows the user to not have to type System.out everytime to print
      *
      * @param s the object passed to be printed
      */
@@ -11,6 +11,11 @@ public final class Util {
 
         System.out.println(s);
     }
+    /**
+     * printArray prints out given array
+     *
+     * @param a the array to be printed
+     */
     public static void printArray(Object a){
 
         for (int i = 0; i < Array.getLength(a); i++){
