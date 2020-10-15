@@ -41,7 +41,7 @@ public final class Util {
 
         while(left <= right) {
 
-            int middle = (left + right) / 2;
+            int middle = (left + right) >>> 1;
 
             if (intArray[middle] ==  value) {
 
@@ -73,7 +73,7 @@ public final class Util {
         //Implement Binary Search for String here. Update index with the correct index if found.
 
         while(left <= right) {
-                int middle = (left + right) / 2;
+                int middle = (left + right) >>> 1;
 
                 if (sArray[middle].equals(value)) {
                     index = middle;
@@ -101,17 +101,17 @@ public final class Util {
 
         while(left <= right) {
 
-            int middle = (left + right) / 2;
+            int middle = (left + right) >>> 1;
 
             if (dArray[middle] ==  value) {
 
                 return middle;
             }
             else if (dArray[middle] < value) {
-                left = middle + 1;
+                left = ++middle;
 
             }else {
-                right = middle - 1;
+                right = --middle;
             }
         }
         //If not found return index as -1

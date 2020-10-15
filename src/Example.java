@@ -26,7 +26,7 @@ public class Example {
         Util.printArray(dArray);
         Util.mergeSort(dArray,0,dArray.length - 1);
         Util.printArray(dArray);
-        Util.print(Util.binarySearch(dArray,3.14));
+        Util.print(Util.binarySearch(dArray,10.1));
 
     }
 }
