@@ -24,6 +24,13 @@ public final class Util {
         System.out.println();
     }
 
+    /**
+     * readInput will read lines from command input
+     * 
+     */
+    public static void readInput(){
+        // TODO: 10/18/2020  
+    }
     //================================================//
     //====================Searches====================//
     //================================================//
