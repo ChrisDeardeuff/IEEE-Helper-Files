@@ -6,7 +6,7 @@ public class Example {
         Util.print("Hello World");
 
         int[] array = {2, 3, 7, 10, 5, 9};
-        String[] sArray = {"Cat","Dog","Monkey","Ardvark","Turtle"};
+        String[] sArray = {"Cat","Dog","Monkey","Ardvark","Turtle", "Lane Summersill", "Ian Bankeser"};
         double[] dArray = {2.3,3.14,0.0,9.2,10.1, -10.1};
 
         //print Array
