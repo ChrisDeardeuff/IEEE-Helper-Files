@@ -148,7 +148,7 @@ public final class Util {
             merge(intArr, left, middle, right);
         }
     }
-    // Helper for MergeSort
+    // Mergesort helper method to merge two arrays together
     private static void merge(int[] intArr, int left, int middle, int right){
 
         int size1 = middle - left + 1;
